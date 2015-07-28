@@ -6,6 +6,8 @@
 #include "Subsystems/DriveBase.h"
 #include "OI.h"
 #include "WPILib.h"
+#include "Subsystems/FeederLift.h"
+#include "Subsystems/MotorFeeder.h"
 //include includes for each subsystem
 /**
  * The base for all commands. All atomic commands should subclass CommandBase.
@@ -21,6 +23,8 @@ public:
 	// Create a single static instance of all of your subsystems
 	static DriveBase *drivebase;
 	static OI *oi;
+	static FeederLift *feederlift;
+	static MotorFeeder *motorfeeder;
 };
 
 #endif

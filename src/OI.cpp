@@ -1,6 +1,10 @@
+#include "WPILib.h"
+#include "SmartDashboard/SmartDashboard.h"
 #include "OI.h"
 #include "RobotMap.h"
 #include "Commands/PSControllerMove.h"
+#include "Commands/UseFeederMotor.h"
+#include "Commands/ToFeederLift.h"
 //Include h files for all the commands requiring the joysticks
 
 OI::OI()
@@ -57,8 +61,23 @@ OI::OI()
 
 //End PS Controller Buttons
 
-}
+	SmartDashboard::init();
 
+
+
+
+
+
+	LTrig1 -> WhenPressed(new ToFeederLift());
+
+// Make this the other Feeder function, for lowering, later
+	LTrig2 -> WhenPressed(new ToFeederLift());
+
+	RTrig1 -> WhenPressed(new UseFeederMotor());
+
+// Make this the other Motor function, goes reverse, later
+	RTrig2 -> WhenPressed(new UseFeederMotor());
+}
 /********************************
  *Logitech Joystick reading section
  *Button defs have not been created
@@ -95,12 +114,14 @@ double OI::ReadJoystickZ()
 double OI::ReadJoystickX()
 {
 	double Slew =	PSController	-> GetRawAxis(0);
+//	SmartDashboard::GetInstance()->PutNumber("X-Axis", Slew);
 	return Slew;
 }
 
 double OI::ReadJoystickY()
 {
-	double Throttle =	PSController-> GetRawAxis(3);
+	double Throttle =	PSController-> GetRawAxis(4);
+//	SmartDashboard	-> PutNumber("Y-Axis",Throttle);
 	return Throttle;
 }
 
@@ -109,4 +130,14 @@ double OI::ReadJoystickY()
  *End Logitech section
  *
 ********************************/
+
+/******************************
+ * Feeder Buttons
+ *****************************/
+
+
+
+
+
+
 

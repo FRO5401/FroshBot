@@ -1,9 +1,10 @@
 #include "WPILib.h"
 #include "Commands/Command.h"
-#include "Commands/PSControllerMove.h"
 #include "CommandBase.h"
+#include "OI.h"
 //Include includes for each and every command
-//OMFG Please work!!  Pretty please!!!
+#include "Commands/PSControllerMove.h"
+
 class Robot: public IterativeRobot
 {
 private:
@@ -15,6 +16,8 @@ private:
 		CommandBase::init();
 		//autonomousCommand = new ExampleCommand();
 		lw = LiveWindow::GetInstance();
+		SmartDashboard::init();
+
 	}
 	
 	void DisabledPeriodic()
@@ -41,11 +44,15 @@ private:
 		// this line or comment it out.
 		if (autonomousCommand != NULL)
 			autonomousCommand->Cancel();
+//		PutDashboard();
 	}
 
 	void TeleopPeriodic()
 	{
 		Scheduler::GetInstance()->Run();
+		SmartDashboard::PutNumber("X-Axis",	CommandBase::oi 	->ReadJoystickX());
+		SmartDashboard::PutNumber("Y-Axis",	CommandBase::oi 	->ReadJoystickY());
+
 	}
 
 	void TestPeriodic()

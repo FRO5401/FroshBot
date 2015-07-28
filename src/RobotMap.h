@@ -35,5 +35,21 @@ const double Full = 1;
  *End Speed Controllers
 ********************************/
 
+/****************************
+ * Feeder Lift Pneumatics
+ ***************************/
+const int SOL_CAN_ID = 0;
+const int leftPneumaticLift_Forward = 0;
+const int leftPneumaticLift_Reverse = 1;
+const int rightPneumaticLift_Forward = 2;
+const int rightPneumaticLift_Reverse = 3;
+
+
+/****************************
+ * Feeder Motors
+ ****************************/
+const int FeederMotorLeft = 3;
+const int FeederMotorRight = 4;
+
 
 #endif
