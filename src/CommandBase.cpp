@@ -1,10 +1,12 @@
 #include "CommandBase.h"
 #include "Subsystems/DriveBase.h"
+#include "Subsystems/Roller.h"
 #include "Commands/Scheduler.h"
 
 // Initialize a single static instance of all of your subsystems to NULL
 DriveBase* CommandBase::drivebase = NULL;
 OI* CommandBase::oi = NULL;
+Roller* CommandBase::roller = NULL;
 
 CommandBase::CommandBase(char const *name) :
 		Command(name)

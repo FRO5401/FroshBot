@@ -4,6 +4,7 @@
 #include <string>
 #include "Commands/Command.h"
 #include "Subsystems/DriveBase.h"
+#include "Subsystems/Roller.h"
 #include "OI.h"
 #include "WPILib.h"
 //include includes for each subsystem
@@ -20,6 +21,7 @@ public:
 	static void init();
 	// Create a single static instance of all of your subsystems
 	static DriveBase *drivebase;
+	static Roller *roller;
 	static OI *oi;
 };
 

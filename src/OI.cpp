@@ -1,6 +1,8 @@
 #include "OI.h"
 #include "RobotMap.h"
 #include "Commands/PSControllerMove.h"
+#include "Commands/RollerForward.h"
+#include "Commands/RollerReverse.h"
 //Include h files for all the commands requiring the joysticks
 
 OI::OI()
@@ -42,7 +44,7 @@ OI::OI()
 ********************************/
 //Froshbot Button Commands
 //Uncomment used buttons and replace ExCommand with actual command names
-/*
+	/*
 	One		->WhenPressed(new ExCommand());
 	Two		->WhenPressed(new ExCommand());
 	Three	->WhenPressed(new ExCommand());
@@ -53,9 +55,16 @@ OI::OI()
 	RTrig2	->WhenPressed(new ExCommand());
 	Nine	->WhenPressed(new ExCommand());
 	Ten		->WhenPressed(new ExCommand());
-*/
+	*/
 
 //End PS Controller Buttons
+
+//Roller
+
+	Two     ->WhenPressed(new Roller(0));
+	Three   ->WhenPressed(new Roller(1));
+
+//End Roller
 
 }
 
