@@ -10,6 +10,7 @@ private:
 	Command *autonomousCommand;
 	LiveWindow *lw;
 
+
 	void RobotInit()
 	{
 		CommandBase::init();

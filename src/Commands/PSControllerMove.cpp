@@ -1,5 +1,6 @@
 #include "PSControllerMove.h"
 #include "RobotMap.h"
+#include "SmartDashboard/SmartDashboard.h"
 
 PSControllerMove::PSControllerMove()
 {
@@ -55,6 +56,8 @@ void PSControllerMove::Execute()
 		Right	= 0;
 	}
 
+	SmartDashboard::PutNumber("X-Axis", Slew);
+	SmartDashboard::PutNumber("Y-Axis", Throttle);
 
 	drivebase	-> Drive(Left, Right);
 }

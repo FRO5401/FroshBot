@@ -100,7 +100,7 @@ double OI::ReadJoystickX()
 
 double OI::ReadJoystickY()
 {
-	double Throttle =	PSController-> GetRawAxis(3);
+	double Throttle =	PSController-> GetRawAxis(4);
 	return Throttle;
 }
 
