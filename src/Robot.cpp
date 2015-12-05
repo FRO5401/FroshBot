@@ -20,15 +20,16 @@ private:
 	void RobotInit()
 	{
 		CommandBase::init();
-		//autonomousCommand = new ExampleCommand();
 		lw = LiveWindow::GetInstance();
+		//Dashboard selected mode block
 		autoMode = new SendableChooser();
 		autoMode->AddDefault("Default-Green", new GreenMode());
-
 		autoMode->AddObject("Red", new RedMode());
-//		autonomousCommand = new AutonomousCommandGroup();
 		SmartDashboard::PutData("Autonomous Mode", autoMode);
 		lw =LiveWindow::GetInstance();
+		//End dash select block
+
+//		autonomousCommand = new RedMode();//Plain Run Red auto mode
 	}
 	
 	void DisabledPeriodic()
@@ -38,9 +39,8 @@ private:
 
 	void AutonomousInit()
 	{
-		if (autonomousCommand != NULL)
-			autonomousCommand = (Command *) autoMode->GetSelected();
-			autonomousCommand->Start();
+		autonomousCommand = (Command *) autoMode->GetSelected(); //Dashboard selection command
+		autonomousCommand->Start();
 	}
 
 	void AutonomousPeriodic()

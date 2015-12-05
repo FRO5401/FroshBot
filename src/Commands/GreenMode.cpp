@@ -34,7 +34,7 @@ void GreenMode::Execute()
 	SmartDashboard::PutNumber("Y-Axis", Throttle);
 
 	drivebase	-> Drive(Left, Right);
-	Wait(5);
+//	Wait(20);
 }
 
 // Make this return true when this Command no longer needs to run execute()
