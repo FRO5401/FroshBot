@@ -1,8 +1,9 @@
 #include "WPILib.h"
 #include "Commands/Command.h"
 #include "Commands/PSControllerMove.h"
-#include "Commands/GreenMode.h"
+//#include "Commands/GreenMode.h"
 #include "Commands/RedMode.h"
+#include "Commands/AutoFwd.h"
 #include "CommandBase.h"
 //Include includes for each and every command
 //OMFG Please work!!  Pretty please!!!
@@ -23,10 +24,9 @@ private:
 		lw = LiveWindow::GetInstance();
 		//Dashboard selected mode block
 		autoMode = new SendableChooser();
-		autoMode->AddDefault("Default-Green", new GreenMode());
+		autoMode->AddDefault("Default-AutoFwd", new AutoFwd());
 		autoMode->AddObject("Red", new RedMode());
 		SmartDashboard::PutData("Autonomous Mode", autoMode);
-		lw =LiveWindow::GetInstance();
 		//End dash select block
 
 //		autonomousCommand = new RedMode();//Plain Run Red auto mode

@@ -19,7 +19,8 @@ OI::OI()
  *Button Defs have not been created for unused controllers
 ********************************/
 //PS Controller Buttons  
-  JoystickButton*	One		=	new JoystickButton(PSController, 1);
+  JoystickButton*	Unused;
+  	  	  	  	  	One		=	new JoystickButton(PSController, 1);
 					Two		=	new JoystickButton(PSController, 2);
 					Three	=	new JoystickButton(PSController, 3);
 					Four	=	new JoystickButton(PSController, 4);
@@ -31,6 +32,7 @@ OI::OI()
 					Ten		=	new JoystickButton(PSController, 10);
 
 //End PS Controller Buttons
+
 
 //Logitech 3D Pro Section
 	//No Logitech buttons defined at this time

@@ -35,7 +35,7 @@ void RedMode::Execute()
 	SmartDashboard::PutNumber("Y-Axis", Throttle);
 
 	drivebase	-> Drive(Left, Right);
-//	Wait(20);
+	Wait(10);
 }
 
 // Make this return true when this Command no longer needs to run execute()

@@ -7,6 +7,7 @@
 #include "GreenMode.h"
 #include "RobotMap.h"
 #include "SmartDashboard/SmartDashboard.h"
+	bool Done = FALSE;
 
 GreenMode::GreenMode()
 {
@@ -34,19 +35,20 @@ void GreenMode::Execute()
 	SmartDashboard::PutNumber("Y-Axis", Throttle);
 
 	drivebase	-> Drive(Left, Right);
-//	Wait(20);
+	Wait(10);
+	Done = TRUE;
 }
 
 // Make this return true when this Command no longer needs to run execute()
 bool GreenMode::IsFinished()
 {
-	return false;
+	return Done;
 }
 
 // Called once after isFinished returns true
 void GreenMode::End()
 {
-	drivebase	-> Drive(0, 0);
+	drivebase	-> Stop();
 }
 
 // Called when another command which requires one or more of the same
